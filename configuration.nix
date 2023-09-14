@@ -16,6 +16,16 @@
     networking.hostName = "tatskrow";
     networking.networkmanager.enable = true;
 
+    hardware.opengl = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        vaapiIntel         # LIBVA_DRIVER_NAME=i965
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+    };
+
     services.xserver.enable = true;
     services.xserver.layout = "us";
     services.xserver.xkbVariant = "altgr-intl";
@@ -53,10 +63,15 @@
     };
 
     environment.systemPackages = with pkgs; [
+        file
+        htop
+        moreutils
         nix-index
+        patchelf
+        tmux
+        unzip
         vim 
         wget
-        tmux
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
