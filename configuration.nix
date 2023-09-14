@@ -42,6 +42,9 @@
     services.xserver.displayManager.defaultSession = "xfce";
     services.xserver.displayManager.lightdm.enable = true;
 
+    # hardware.bluetooth.enable = true;
+    # services.blueman.enable = true;
+
     users.users.fd = {
         isNormalUser = true; # TODO: ???
         extraGroups = [ "wheel" ];
