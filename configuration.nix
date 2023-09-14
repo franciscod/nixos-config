@@ -40,6 +40,7 @@
             alacritty
             firefox
             git
+            gnumake
             helix
             ncdu
             ranger
