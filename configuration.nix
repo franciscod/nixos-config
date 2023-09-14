@@ -13,7 +13,7 @@
     time.timeZone = "America/Buenos_Aires";
     i18n.defaultLocale = "en_US.UTF-8";
 
-    networking.hostName = "tatskrow"; # Define your hostname.
+    networking.hostName = "tatskrow";
     networking.networkmanager.enable = true;
 
     services.xserver.enable = true;
@@ -51,9 +51,9 @@
 
     environment.systemPackages = with pkgs; [
         nix-index
-            vim 
-            wget
-            tmux
+        vim 
+        wget
+        tmux
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
