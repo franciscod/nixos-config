@@ -38,12 +38,14 @@
         packages = with pkgs; [
             # TODO: user vs sys packages?
             alacritty
+            fd
             firefox
             git
             gnumake
             helix
             ncdu
             ranger
+            ripgrep
             tig
             tree
             w3m
