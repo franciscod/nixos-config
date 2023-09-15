@@ -51,6 +51,7 @@
         packages = with pkgs; [
             # TODO: user vs sys packages?
             alacritty
+            chromium
             fd
             firefox
             git
@@ -66,6 +67,14 @@
     };
 
     environment.systemPackages = with pkgs; [
+        (let base = pkgs.appimageTools.defaultFhsEnvArgs; in 
+            pkgs.buildFHSUserEnv (base // {
+              name = "fhs";
+              targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config]; 
+              profile = "export FHS=1"; 
+              runScript = "fish"; 
+              extraOutputsToInstall = ["dev"]; }))
+        fish
         file
         htop
         moreutils
