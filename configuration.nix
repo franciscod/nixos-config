@@ -66,6 +66,7 @@
             ripgrep
             tig
             tree
+            unclutter
             w3m
         ];
     };
@@ -84,6 +85,7 @@
         moreutils
         nix-index
         patchelf
+        python3
         tmux
         unzip
         vim 
