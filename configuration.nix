@@ -44,6 +44,10 @@
 
     # hardware.bluetooth.enable = true;
     # services.blueman.enable = true;
+    fonts.fonts = with pkgs; [
+        iosevka
+        terminus_font_ttf
+    ];
 
     users.users.fd = {
         isNormalUser = true; # TODO: ???
