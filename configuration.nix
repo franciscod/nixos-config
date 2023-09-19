@@ -61,7 +61,6 @@
         isNormalUser = true; # TODO: ???
         extraGroups = [ "wheel" ];
         packages = with pkgs; [
-            # TODO: user vs sys packages?
             alacritty
             chromium
             fd
@@ -69,14 +68,18 @@
             git
             gnumake
             helix
+            mpv
             ncdu
             podman-compose
+            python3
             ranger
             ripgrep
             tig
             tree
             unclutter
             w3m
+            xarchiver
+            zathura
         ];
     };
 
@@ -88,13 +91,11 @@
               profile = "export FHS=1"; 
               runScript = "fish"; 
               extraOutputsToInstall = ["dev"]; }))
-        fish
         file
+        fish
         htop
         moreutils
         nix-index
-        patchelf
-        python3
         tmux
         unzip
         vim 
