@@ -42,6 +42,14 @@
     services.xserver.displayManager.defaultSession = "xfce";
     services.xserver.displayManager.lightdm.enable = true;
 
+    virtualisation = {
+      podman = {
+        enable = true;
+        dockerCompat = true;
+        defaultNetwork.settings.dns_enabled = true;
+      };
+    };
+
     # hardware.bluetooth.enable = true;
     # services.blueman.enable = true;
     fonts.fonts = with pkgs; [
@@ -62,6 +70,7 @@
             gnumake
             helix
             ncdu
+            podman-compose
             ranger
             ripgrep
             tig
