@@ -58,7 +58,7 @@
     ];
 
     users.users.fd = {
-        isNormalUser = true; # TODO: ???
+        isNormalUser = true;  # home and stuff, not isSystemuser
         extraGroups = [ "wheel" ];
         packages = with pkgs; [
             alacritty
@@ -110,22 +110,14 @@
     #   enableSSHSupport = true;
     # };
 
-    # List services that you want to enable:
-
-    # TODO: Enable the OpenSSH daemon.
-    # services.openssh.enable = true;
-
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
 
-    # TODO: ???
-    # Copy the NixOS configuration file and link it from the resulting system
-    # (/run/current-system/configuration.nix). This is useful in case you
-    # accidentally delete configuration.nix.
-    # system.copySystemConfiguration = true;
+    # (to /run/current-system/configuration.nix)
+    system.copySystemConfiguration = true;
 
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
