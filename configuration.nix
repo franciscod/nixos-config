@@ -6,6 +6,7 @@
     ];
 
     nix.settings.experimental-features = [ "nix-command" ];
+    nix.settings.auto-optimise-store = true;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
