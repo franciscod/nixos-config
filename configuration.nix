@@ -95,12 +95,22 @@
         fish
         htop
         moreutils
+        nix-direnv
         nix-index
         tmux
         unzip
         vim 
         wget
     ];
+
+    programs.direnv = {
+      enable = true;
+      nix-direnv = {
+        enable = true;
+        package = pkgs.nix-direnv;
+      };
+    };
+
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

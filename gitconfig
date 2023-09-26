@@ -1,0 +1,9 @@
+[user]
+	email = git@fd1.com.ar
+	name = Francisco Demartino
+[core]
+	excludesfile = /home/fd/cfg/gitexcludes
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
