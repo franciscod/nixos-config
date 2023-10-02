@@ -53,6 +53,10 @@
 
     # hardware.bluetooth.enable = true;
     # services.blueman.enable = true;
+
+    services.tailscale.enable = true;
+    services.avahi.enable = true;
+
     fonts.fonts = with pkgs; [
         iosevka
         terminus_font_ttf
