@@ -63,10 +63,12 @@
         extraGroups = [ "wheel" ];
         shell = pkgs.fish;
         packages = with pkgs; [
+            age
             alacritty
             chromium
             fd
             firefox
+            fzf
             git
             gnumake
             helix
@@ -74,6 +76,7 @@
             mpv
             ncdu
             nnn
+            passage
             podman-compose
             python3
             qrencode
