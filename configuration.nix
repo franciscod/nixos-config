@@ -61,6 +61,7 @@
     users.users.fd = {
         isNormalUser = true;  # home and stuff, not isSystemuser
         extraGroups = [ "wheel" ];
+        shell = pkgs.fish;
         packages = with pkgs; [
             alacritty
             chromium
@@ -69,21 +70,28 @@
             git
             gnumake
             helix
+            man-pages
             mpv
             ncdu
+            nnn
             podman-compose
             python3
+            qrencode
             ranger
             ripgrep
+            syncthing
             tig
+            tigervnc
             tree
             unclutter
+            vncdo
             w3m
             xarchiver
             zathura
         ];
     };
 
+    environment.shells = [ pkgs.fish ];
     environment.systemPackages = with pkgs; [
         (let base = pkgs.appimageTools.defaultFhsEnvArgs; in 
             pkgs.buildFHSUserEnv (base // {
@@ -93,7 +101,6 @@
               runScript = "fish"; 
               extraOutputsToInstall = ["dev"]; }))
         file
-        fish
         htop
         moreutils
         nix-direnv
@@ -102,8 +109,17 @@
         unzip
         vim 
         wget
+        zip
     ];
+    environment.variables.EDITOR = "vim";
 
+    programs.fish = {
+      enable = true;
+      shellAliases = {
+	ip = "ip -c";
+      };
+    };
+	
     programs.direnv = {
       enable = true;
       nix-direnv = {
