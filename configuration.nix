@@ -69,17 +69,21 @@
             age
             alacritty
             chromium
+            entr
             fd
             firefox
             fzf
             git
+            git-absorb
             gnumake
+            graphviz
             helix
             man-pages
             mpv
             ncdu
             nnn
             passage
+            peek
             podman-compose
             python3
             qrencode
@@ -93,6 +97,7 @@
             vncdo
             w3m
             xarchiver
+            xclip
             zathura
         ];
     };
@@ -113,7 +118,7 @@
         nix-index
         tmux
         unzip
-        vim 
+        vim-full
         wget
         zip
     ];

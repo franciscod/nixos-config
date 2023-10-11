@@ -9,3 +9,6 @@
 	autostash = true
 [init]
 	defaultBranch = master
+[alias]
+	ca = commit --amend
+	rc = rebase --continue
