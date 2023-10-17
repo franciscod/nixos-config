@@ -1,14 +1,17 @@
 [user]
 	email = git@fd1.com.ar
 	name = Francisco Demartino
-[core]
-	excludesfile = /home/fd/cfg/gitexcludes
+[init]
+	defaultBranch = master
+
+[merge]
+	conflictstyle = diff3
 [pull]
 	rebase = true
 [rebase]
 	autostash = true
-[init]
-	defaultBranch = master
+
 [alias]
 	ca = commit --amend
 	rc = rebase --continue
+	pp = !git pull && git push
