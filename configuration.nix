@@ -90,6 +90,7 @@
             fd
             firefox
             fzf
+            ghc
             git
             git-absorb
             gnumake
@@ -99,14 +100,18 @@
             mpv
             ncdu
             nnn
+            pandoc
             passage
             peek
             podman-compose
+            psmisc
             python3
+            qbittorrent
             qrencode
             ranger
             ripgrep
             syncthing
+            texlive.combined.scheme-tetex
             tig
             tigervnc
             tree
@@ -115,6 +120,7 @@
             w3m
             xarchiver
             xclip
+            yt-dlp
             zathura
         ];
     };
@@ -139,6 +145,7 @@
         wget
         zip
     ];
+
     environment.variables.EDITOR = "vim";
 
     programs.direnv = {
@@ -149,7 +156,6 @@
       };
     };
 
-
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;
@@ -159,7 +165,7 @@
     # };
 
     # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
+    networking.firewall.allowedTCPPorts = [ 8000 ];
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
