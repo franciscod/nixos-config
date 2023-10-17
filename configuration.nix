@@ -11,6 +11,23 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    powerManagement.enable = true;    # "stock NixOS power management tool"
+    services.thermald.enable = true;  # "prevents overheating on intel cpus"
+    services.tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_ENERGY_PREF_POLICY_ON_AC = "performance";
+        CPU_MIN_PERF_ON_AC = 0;
+        CPU_MAX_PERF_ON_AC = 100;
+
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_ENERGY_PREF_POLICY_ON_BAT = "power";
+        CPU_MIN_PERF_ON_BAT = 0;
+        CPU_MAX_PERF_ON_BAT = 20;
+      };
+    };
+
     time.timeZone = "America/Buenos_Aires";
     i18n.defaultLocale = "en_US.UTF-8";
 
