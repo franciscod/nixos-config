@@ -1,17 +1,21 @@
 [user]
 	email = git@fd1.com.ar
 	name = Francisco Demartino
+
+[commit]
+	verbose = true
 [init]
 	defaultBranch = master
-
 [merge]
 	conflictstyle = diff3
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
 [rebase]
 	autostash = true
 
 [alias]
 	ca = commit --amend
-	rc = rebase --continue
 	pp = !git pull && git push
+	rc = rebase --continue
