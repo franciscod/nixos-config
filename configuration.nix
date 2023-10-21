@@ -91,6 +91,7 @@
             firefox
             fzf
             ghc
+            gimp
             git
             git-absorb
             gnumake
@@ -120,6 +121,8 @@
             w3m
             xarchiver
             xclip
+            xdotool
+            xorg.xkill
             yt-dlp
             zathura
         ];
@@ -135,6 +138,7 @@
               runScript = "bash"; 
               extraOutputsToInstall = ["dev"]; }))
         file
+        fish
         htop
         moreutils
         nix-direnv
