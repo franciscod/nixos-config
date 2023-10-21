@@ -155,7 +155,10 @@
         zip
     ];
 
-    environment.variables.EDITOR = "vim";
+    environment.variables = {
+      EDITOR = "vim";
+      MOZ_USE_XINPUT2 = "1";
+    };
 
     programs.direnv = {
       enable = true;
