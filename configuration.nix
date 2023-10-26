@@ -109,6 +109,7 @@
         packages = with pkgs; [
             age
             alacritty
+            dmenu
             entr
             fd
             fzf
@@ -120,9 +121,12 @@
             graphviz
             helix
             man-pages
+            mono
             mpv
+            msbuild
             ncdu
             nnn
+            obs-studio
             pandoc
             passage
             peek
@@ -132,6 +136,7 @@
             qbittorrent
             ranger
             ripgrep
+            subdl
             syncthing
             texlive.combined.scheme-tetex
             tig
