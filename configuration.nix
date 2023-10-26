@@ -90,7 +90,11 @@
         terminus_font_ttf
     ];
 
+    programs.fish.enable = true;
+    users.defaultUserShell = pkgs.fish;
+
     users.users.fd = {
+        useDefaultShell = true;
         isNormalUser = true;  # home and stuff, not isSystemuser
         extraGroups = [ "wheel" ];
         packages = with pkgs; [
@@ -142,7 +146,7 @@
               name = "fhs";
               targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config]; 
               profile = "export FHS=1"; 
-              runScript = "bash"; 
+              runScript = "fish"; 
               extraOutputsToInstall = ["dev"]; }))
         chromium
         file
