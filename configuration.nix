@@ -96,10 +96,8 @@
         packages = with pkgs; [
             age
             alacritty
-            chromium
             entr
             fd
-            firefox
             fzf
             ghc
             gimp
@@ -119,7 +117,6 @@
             psmisc
             python3
             qbittorrent
-            qrencode
             ranger
             ripgrep
             syncthing
@@ -127,7 +124,6 @@
             tig
             tigervnc
             tree
-            unclutter
             vncdo
             w3m
             xarchiver
@@ -148,13 +144,17 @@
               profile = "export FHS=1"; 
               runScript = "bash"; 
               extraOutputsToInstall = ["dev"]; }))
+        chromium
         file
+        firefox
         fish
         htop
         moreutils
         nix-direnv
         nix-index
         tmux
+        qrencode
+        unclutter
         unzip
         vim-full
         wget
