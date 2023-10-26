@@ -85,6 +85,15 @@
     services.tailscale.enable = true;
     services.avahi.enable = true;
 
+    services.flatpak.enable = true;
+    
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      # gtk portal needed to make gtk apps happy
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+
     fonts.fonts = with pkgs; [
         iosevka
         terminus_font_ttf
