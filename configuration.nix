@@ -30,6 +30,12 @@
         CPU_ENERGY_PREF_POLICY_ON_BAT = "power";
         CPU_MIN_PERF_ON_BAT = 0;
         CPU_MAX_PERF_ON_BAT = 80;
+
+        START_CHARGE_THRESH_BAT0 = 83;
+        STOP_CHARGE_THRESH_BAT0  = 89;
+
+        START_CHARGE_THRESH_BAT1 = 83;
+        STOP_CHARGE_THRESH_BAT1  = 89;
       };
     };
 
