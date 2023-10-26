@@ -38,11 +38,11 @@
         STOP_CHARGE_THRESH_BAT1  = 89;
       };
     };
+    networking.hostName = "tatskrow";
 
     time.timeZone = "America/Buenos_Aires";
     i18n.defaultLocale = "en_US.UTF-8";
 
-    networking.hostName = "tatskrow";
     networking.networkmanager.enable = true;
 
     hardware.opengl = {
