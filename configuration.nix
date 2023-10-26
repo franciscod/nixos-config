@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  RTMP_PORT = 2463;
+in
 {
     imports = [
         ./hardware-configuration.nix
@@ -192,6 +194,24 @@
       };
     };
 
+    services.nginx = {
+      enable = true;
+      additionalModules = [ pkgs.nginxModules.rtmp ];
+      appendConfig = ''
+        rtmp {
+          server {
+            listen ${builtins.toString RTMP_PORT};
+            chunk_size 4096;
+
+            application cine {
+              live on;
+              record off;
+            }
+          }
+        } 
+      '';
+    };
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;
@@ -201,7 +221,7 @@
     # };
 
     # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 8000 ];
+    networking.firewall.allowedTCPPorts = [ 8000 RTMP_PORT ];
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
