@@ -5,6 +5,9 @@ apply:
 grab:
 	cp /etc/nixos/configuration.nix .
 
+update:
+	sudo nix-channel --update
+
 cleanup:
 	sudo nix-collect-garbage --delete-older-than 14d
 
