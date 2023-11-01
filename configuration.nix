@@ -146,6 +146,7 @@ in
             obs-studio
             pandoc
             passage
+            pdfslicer
             peek
             podman-compose
             psmisc
