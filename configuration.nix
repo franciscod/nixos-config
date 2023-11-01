@@ -149,6 +149,7 @@ in
             xarchiver
             xclip
             xdotool
+            xonotic
             xorg.xkill
             yt-dlp
             zathura
