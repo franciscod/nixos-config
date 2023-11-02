@@ -141,7 +141,6 @@ in
             man-pages
             mono
             mpv
-            msbuild
             ncdu
             nnn
             obs-studio
