@@ -130,14 +130,18 @@ in
             dmenu
             entr
             fd
+            fx
             fzf
             ghc
             gimp
             git
             git-absorb
             gnumake
+            goaccess
             graphviz
             helix
+            jq
+            libyaml
             man-pages
             mono
             mpv
@@ -154,6 +158,7 @@ in
             qbittorrent
             ranger
             ripgrep
+            ruby
             subdl
             syncthing
             texlive.combined.scheme-tetex

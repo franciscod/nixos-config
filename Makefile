@@ -1,5 +1,9 @@
-apply:
+apply: copy rebuild
+
+copy:
 	sudo cp configuration.nix /etc/nixos/configuration.nix
+
+rebuild:
 	sudo nixos-rebuild switch
 
 grab:
