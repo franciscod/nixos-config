@@ -1,0 +1,2 @@
+#!/bin/sh
+exec qrencode -t ansiutf8 "$@"
