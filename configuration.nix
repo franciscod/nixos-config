@@ -149,6 +149,7 @@ in
             nnn
             nq
             obs-studio
+            p7zip
             pandoc
             passage
             pdfslicer
