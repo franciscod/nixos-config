@@ -147,6 +147,7 @@ in
             mpv
             ncdu
             nnn
+            nq
             obs-studio
             pandoc
             passage
@@ -159,6 +160,8 @@ in
             ranger
             ripgrep
             ruby
+            rwc
+            snooze
             subdl
             syncthing
             texlive.combined.scheme-tetex
@@ -170,6 +173,7 @@ in
             xarchiver
             xclip
             xdotool
+            xe
             # xfce.xfce4-pulseaudio-plugin  # xfce.nix looks for pulse to include this
             xonotic
             xorg.xkill
