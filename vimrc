@@ -17,6 +17,6 @@ let mapleader=" "
 map <leader><leader> :Commands<CR>
 map <leader>/ :execute 'Rg ' . input('Rg/')<CR>
 map <leader>b :Buffers<CR>
-map <leader>f :GFiles<CR>
-map <leader>gf :GF?<CR>
+map <leader>f :GF<CR>
+map <leader>d :GF?<CR>
 map <leader>l :BLines<CR>
