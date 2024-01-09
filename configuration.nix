@@ -111,7 +111,7 @@ in
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
 
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
         iosevka
         terminus_font_ttf
     ];
