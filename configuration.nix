@@ -66,20 +66,18 @@ in
     # sound.enable = true;
 
     # pulse 
-    hardware.pulseaudio.enable = true;
+    # hardware.pulseaudio.enable = true;
 
-    # TODO: how to get pipewire + xfce pulse plugin? or something that handles volume media keys
-    # # pipewire
-    # # rtkit is optional but recommended
-    # security.rtkit.enable = true;
-    # services.pipewire = {
-    #   enable = true;
-    #   alsa.enable = true;
-    #   alsa.support32Bit = true;
-    #   pulse.enable = true;
-    #   # If you want to use JACK applications, uncomment this
-    #   #jack.enable = true;
-    # };
+    # pipewire
+    # rtkit is optional but recommended
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
 
     services.xserver.libinput.enable = true;
 
@@ -176,11 +174,16 @@ in
             xclip
             xdotool
             xe
-            # xfce.xfce4-pulseaudio-plugin  # xfce.nix looks for pulse to include this
             xonotic
             xorg.xkill
             yt-dlp
             zathura
+
+            # xfce.nix looks for pulse to include this
+            pavucontrol
+            xfce.xfce4-volumed-pulse  
+            ## this doesn't show up in the panel item list? # xfce.xfce4-pulseaudio-plugin  
+            ## but it does in the pulseaudio (not pipewire) case
         ];
     };
 
