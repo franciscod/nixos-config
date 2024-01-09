@@ -124,66 +124,6 @@ in
         isNormalUser = true;  # home and stuff, not isSystemuser
         extraGroups = [ "wheel" ];
         packages = with pkgs; [
-            age
-            alacritty
-            dmenu
-            entr
-            fd
-            fx
-            fzf
-            ghc
-            gimp
-            git
-            git-absorb
-            gnumake
-            goaccess
-            graphviz
-            helix
-            jq
-            libyaml
-            man-pages
-            mono
-            mpv
-            ncdu
-            nnn
-            nq
-            obs-studio
-            p7zip
-            pandoc
-            passage
-            pdfslicer
-            peek
-            podman-compose
-            psmisc
-            python3
-            qbittorrent
-            ranger
-            ripgrep
-            ruby
-            rwc
-            snooze
-            subdl
-            syncthing
-            texlive.combined.scheme-tetex
-            tig
-            tigervnc
-            tree
-            vncdo
-            w3m
-            xarchiver
-            xclip
-            xdotool
-            xe
-            xonotic
-            xorg.xkill
-            yt-dlp
-            zathura
-
-            # xfce.nix looks for pulse to include this
-            pavucontrol
-            xfce.xfce4-volumed-pulse  
-            ## this doesn't show up in the panel item list? # xfce.xfce4-pulseaudio-plugin  
-            ## but it does in the pulseaudio (not pipewire) case
         ];
     };
 
@@ -196,20 +136,75 @@ in
               profile = "export FHS=1"; 
               runScript = "fish"; 
               extraOutputsToInstall = ["dev"]; }))
+        age
+        alacritty
         chromium
+        dmenu
+        entr
+        fd
         file
         firefox
         fish
+        fx
+        fzf
+        ghc
+        gimp
+        git
+        git-absorb
+        gnumake
+        goaccess
+        graphviz
+        helix
         htop
+        jq
+        libyaml
+        man-pages
+        mono
         moreutils
+        mpv
+        ncdu
         nix-direnv
         nix-index
-        tmux
+        nq
+        obs-studio
+        p7zip
+        pandoc
+        passage
+        pavucontrol
+        pdfslicer
+        peek
+        podman-compose
+        psmisc
+        python3
+        qbittorrent
         qrencode
+        ranger
+        ripgrep
+        ruby
+        rwc
+        snooze
+        subdl
+        syncthing
+        texlive.combined.scheme-tetex
+        tig
+        tigervnc
+        tmux
+        tree
         unclutter
         unzip
         vim-full
+        vncdo
+        w3m
         wget
+        xarchiver
+        xclip
+        xdotool
+        xe
+        xfce.xfce4-pulseaudio-plugin
+        xonotic
+        xorg.xkill
+        yt-dlp
+        zathura
         zip
     ];
 
