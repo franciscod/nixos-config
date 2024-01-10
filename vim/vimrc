@@ -1,8 +1,8 @@
 set background=dark
 colorscheme everforest
+syntax on
 
 set shortmess+=I "skip intro
-syntax on
 set ts=4 sw=4 sts=4 et
 set number
 set relativenumber
@@ -13,6 +13,8 @@ set ignorecase
 set hidden
 set mouse=a
 
+set autoindent
+
 let mapleader=" "
 map <leader><leader> :Commands<CR>
 map <leader>/ :execute 'Rg ' . input('Rg/')<CR>
@@ -20,3 +22,10 @@ map <leader>b :Buffers<CR>
 map <leader>f :GF<CR>
 map <leader>d :GF?<CR>
 map <leader>l :BLines<CR>
+map <leader>o :b #<CR>
+
+command Autosave   autocmd TextChanged,TextChangedI <buffer> silent write
+command NoAutosave autocmd! TextChanged,TextChangedI
+
+map ge G
+map U <C-R>
