@@ -1,4 +1,5 @@
 apply: copy rebuild
+upgrade: update apply
 
 copy:
 	sudo cp configuration.nix /etc/nixos/configuration.nix
