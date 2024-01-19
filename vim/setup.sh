@@ -7,3 +7,5 @@ git clone https://tpope.io/vim/fugitive.git && vim -u NONE -c "helptags fugitive
 git clone https://github.com/junegunn/fzf
 git clone https://github.com/junegunn/fzf.vim
 git clone https://github.com/sainnhe/everforest
+git clone https://github.com/mg979/vim-visual-multi 
+git clone https://github.com/Olical/vim-enmasse

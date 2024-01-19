@@ -29,3 +29,6 @@ command NoAutosave autocmd! TextChanged,TextChangedI
 
 map ge G
 map U <C-R>
+
+map [c :cprev<CR>
+map ]c :cnext<CR>
