@@ -19,12 +19,15 @@ let mapleader=" "
 map <leader><leader> :Commands<CR>
 map <leader>/ :execute 'Rg ' . input('Rg/')<CR>
 map <leader>b :Buffers<CR>
-map <leader>f :GF<CR>
-map <leader>d :GF?<CR>
+map <leader>f :Files<CR>
+map <leader>g :GFiles<CR>
+map <leader>G :GFiles?<CR>
 map <leader>l :BLines<CR>
 map <leader>o :b #<CR>
+map <leader>p "+p
+map <leader>y "+y
 
-command Autosave   autocmd TextChanged,TextChangedI <buffer> silent write
+command Autosave   autocmd  TextChanged,TextChangedI <buffer> silent write
 command NoAutosave autocmd! TextChanged,TextChangedI
 
 map ge G
