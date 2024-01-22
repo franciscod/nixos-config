@@ -18,5 +18,6 @@
 [alias]
 	ca = commit --amend
 	co = checkout
+	ma = merge --abort
 	pp = !git pull && git push
 	rc = rebase --continue
