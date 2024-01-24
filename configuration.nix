@@ -122,7 +122,7 @@ in
     users.users.fd = {
         useDefaultShell = true;
         isNormalUser = true;  # home and stuff, not isSystemuser
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "dialout" ];
         packages = with pkgs; [
         ];
     };
