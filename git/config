@@ -16,8 +16,10 @@
 	autostash = true
 
 [alias]
-	ca = commit --amend
-	co = checkout
-	ma = merge --abort
-	pp = !git pull && git push
-	rc = rebase --continue
+	ca   = commit --amend
+	cane = commit --amend --no-edit
+	co   = checkout
+	ma   = merge --abort
+	pp   = !git pull && git push
+	pu   = !git pull && git push
+	rc   = rebase --continue
