@@ -11,3 +11,4 @@ git clone https://github.com/sainnhe/everforest
 git clone https://github.com/mg979/vim-visual-multi 
 git clone https://github.com/Olical/vim-enmasse
 git clone https://github.com/leafo/moonscript-vim.git
+git clone https://github.com/neovim/nvim-lspconfig

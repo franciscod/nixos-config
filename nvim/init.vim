@@ -40,3 +40,9 @@ set list
 set listchars=tab:\|\ ,trail:·,space:·,extends:>,precedes:<,nbsp:+
 match Todo /\s\+$/
 
+lua <<EOF
+
+require'lspconfig'.zls.setup{}
+require'lspconfig'.clangd.setup{}
+
+EOF

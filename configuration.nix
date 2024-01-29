@@ -163,6 +163,7 @@ in
         moreutils
         mpv
         ncdu
+        neovim
         nix-direnv
         nix-index
         nq
