@@ -1,4 +1,5 @@
 set background=dark
+let g:everforest_better_performance = 1 " !?
 colorscheme everforest
 syntax on
 
@@ -9,7 +10,7 @@ set relativenumber
 
 set ttyfast "placebo?
 
-set ignorecase
+set ignorecase smartcase
 set hidden
 set mouse=a
 
@@ -26,6 +27,8 @@ map <leader>l :BLines<CR>
 map <leader>o :b #<CR>
 map <leader>p "+p
 map <leader>y "+y
+map <leader>m :wa<CR>:make<CR>
+map <leader>i <cmd>source ~/.config/nvim/init.vim<CR>
 
 command Autosave   autocmd  TextChanged,TextChangedI <buffer> silent write
 command NoAutosave autocmd! TextChanged,TextChangedI

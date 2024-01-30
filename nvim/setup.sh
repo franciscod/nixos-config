@@ -8,7 +8,8 @@ git clone https://tpope.io/vim/eunuch.git && vim -u NONE -c "helptags eunuch/doc
 git clone https://github.com/junegunn/fzf
 git clone https://github.com/junegunn/fzf.vim
 git clone https://github.com/sainnhe/everforest
-git clone https://github.com/mg979/vim-visual-multi 
+git clone https://github.com/mg979/vim-visual-multi && vim -u NONE -c "helptags vim-visual-multi/doc" -c q
 git clone https://github.com/Olical/vim-enmasse
 git clone https://github.com/leafo/moonscript-vim.git
 git clone https://github.com/neovim/nvim-lspconfig
+git clone https://github.com/fatih/vim-go.git
