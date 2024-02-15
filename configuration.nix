@@ -15,6 +15,9 @@ in
     nix.settings.experimental-features = [ "nix-command" ];
     nix.settings.auto-optimise-store = true;
 
+    boot.kernelPackages = pkgs.linuxPackages_zen;
+    # boot.kernelPackages = pkgs.linuxPackages-rt;
+
     boot.kernelParams = [ "modprobe.blacklist=dvb_usb_rtl28xxu" ];
 
     boot.loader.systemd-boot.enable = true;
