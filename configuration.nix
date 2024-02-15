@@ -15,6 +15,8 @@ in
     nix.settings.experimental-features = [ "nix-command" ];
     nix.settings.auto-optimise-store = true;
 
+    boot.kernelParams = [ "modprobe.blacklist=dvb_usb_rtl28xxu" ];
+
     boot.loader.systemd-boot.enable = true;
     boot.loader.systemd-boot.configurationLimit = 7;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -99,6 +101,9 @@ in
     # hardware.bluetooth.enable = true;
     # services.blueman.enable = true;
 
+    hardware.rtl-sdr.enable = true;
+    services.udev.packages = [ pkgs.rtl-sdr ];
+
     services.tailscale.enable = true;
     services.avahi.enable = true;
 
@@ -122,7 +127,7 @@ in
     users.users.fd = {
         useDefaultShell = true;
         isNormalUser = true;  # home and stuff, not isSystemuser
-        extraGroups = [ "wheel" "dialout" ];
+        extraGroups = [ "wheel" "dialout" "plugdev" ];
         packages = with pkgs; [
         ];
     };
@@ -139,7 +144,10 @@ in
         age
         alacritty
         chromium
+        csdr
+        cubicsdr
         dmenu
+        dump1090
         entr
         fd
         file
@@ -154,6 +162,7 @@ in
         gnumake
         goaccess
         graphviz
+        gqrx
         helix
         htop
         jq
@@ -181,6 +190,8 @@ in
         qrencode
         ranger
         ripgrep
+        rtl_433
+        rtl-sdr
         ruby
         rwc
         snooze
@@ -193,6 +204,8 @@ in
         tree
         unclutter
         unzip
+        urh
+        usbutils
         vim-full
         vncdo
         w3m
