@@ -231,7 +231,7 @@ in
         urh
         usbutils
         vim-full
-        vncdo
+        # vncdo
         w3m
         wireguard-tools
         wget
