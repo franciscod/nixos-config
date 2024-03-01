@@ -93,6 +93,8 @@ in
     services.xserver.displayManager.defaultSession = "xfce";
     services.xserver.displayManager.lightdm.enable = true;
 
+    services.unclutter.enable = true;
+
     virtualisation = {
       podman = {
         enable = true;
