@@ -106,8 +106,8 @@ in
       };
     };
 
-    # hardware.bluetooth.enable = true;
-    # services.blueman.enable = true;
+    hardware.bluetooth.enable = true;
+    services.blueman.enable = true;
 
     hardware.rtl-sdr.enable = true;
     services.udev.packages = [ pkgs.rtl-sdr ];
@@ -259,6 +259,15 @@ in
           }
         } 
       '';
+    };
+
+    system.activationScripts = {
+      rfkillUnblockWlan = {
+        text = ''
+        rfkill block bluetooth
+        '';
+        deps = [];
+      };
     };
 
     # Some programs need SUID wrappers, can be configured further or are
