@@ -5,12 +5,15 @@ in
 {
     imports = [
         ./hardware-configuration.nix
-        ((builtins.fetchGit {
-          url = "https://github.com/symphorien/nixseparatedebuginfod.git";
-          rev = "466110a37e11a33a3551b44d9da5e323a8924cfa";
-        }) + "/module.nix")
+
+    #     ((builtins.fetchGit {
+    #       url = "https://github.com/symphorien/nixseparatedebuginfod.git";
+    #       rev = "466110a37e11a33a3551b44d9da5e323a8924cfa";
+    #     }) + "/module.nix")
+
     ];
-    services.nixseparatedebuginfod.enable = true;
+
+    # services.nixseparatedebuginfod.enable = true;
 
     nix.settings.experimental-features = [ "nix-command" ];
     nix.settings.auto-optimise-store = true;
