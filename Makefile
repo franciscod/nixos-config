@@ -13,6 +13,7 @@ grab:
 update:
 	sudo nix-channel --update
 
+gc: cleanup
 cleanup:
 	sudo nix-collect-garbage --delete-older-than 14d
 
