@@ -73,7 +73,7 @@ in
     # alsa
     # sound.enable = true;
 
-    # pulse 
+    # pulse
     # hardware.pulseaudio.enable = true;
 
     # pipewire
@@ -116,7 +116,7 @@ in
     services.avahi.enable = true;
 
     services.flatpak.enable = true;
-    
+
     xdg.portal = {
       enable = true;
       wlr.enable = true;
@@ -142,7 +142,7 @@ in
 
     environment.shells = [ pkgs.fish ];
     environment.systemPackages = with pkgs; [
-        (let base = pkgs.appimageTools.defaultFhsEnvArgs; in 
+        (let base = pkgs.appimageTools.defaultFhsEnvArgs; in
             pkgs.buildFHSUserEnv (base // {
               name = "fhs";
               targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config]; 
@@ -276,7 +276,7 @@ in
               record off;
             }
           }
-        } 
+        }
       '';
     };
 
