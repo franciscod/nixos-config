@@ -2,18 +2,31 @@
 	email = git@fd1.com.ar
 	name = Francisco Demartino
 
+[branch]
+	sort = -committerdate
 [commit]
 	verbose = true
+[diff]
+	algorithm = histogram
+	colorMoved = default
+	submodule = log
 [init]
 	defaultBranch = master
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [pull]
 	rebase = true
 [push]
 	autoSetupRemote = true
 [rebase]
 	autostash = true
+	autosquash = true
+[rerere]
+	enabled = true
+[status]
+	submoduleSummary = true
+[submodule]
+	recurse = true
 
 [alias]
 	ca   = commit --amend
