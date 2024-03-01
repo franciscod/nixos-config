@@ -149,12 +149,23 @@ in
               profile = "export FHS=1"; 
               runScript = "fish"; 
               extraOutputsToInstall = ["dev"]; }))
+        acpi
         age
         alacritty
+        audacity
+        avalonia-ilspy
         chromium
+        clang
+        clang-tools # for clangd
         csdr
         cubicsdr
+        cmake
+        croc
+        delta
+        difftastic
         dmenu
+        dotnet-sdk
+        # dotnet-sdk-6
         dump1090
         entr
         fd
@@ -168,6 +179,7 @@ in
         git
         git-absorb
         gnumake
+        gnumeric
         goaccess
         graphviz
         gqrx
@@ -175,14 +187,18 @@ in
         htop
         jq
         libyaml
+        lldb
         man-pages
+        meson
         mono
         moreutils
         mpv
         ncdu
         neovim
+        ninja
         nix-direnv
         nix-index
+        nodejs
         nq
         obs-studio
         p7zip
@@ -191,6 +207,7 @@ in
         pavucontrol
         pdfslicer
         peek
+        pkg-config
         podman-compose
         psmisc
         python3
@@ -203,7 +220,6 @@ in
         ruby
         rwc
         snooze
-        subdl
         syncthing
         texlive.combined.scheme-tetex
         tig
@@ -217,6 +233,7 @@ in
         vim-full
         vncdo
         w3m
+        wireguard-tools
         wget
         xarchiver
         xclip
@@ -227,7 +244,9 @@ in
         xorg.xkill
         yt-dlp
         zathura
+        zig
         zip
+        zls
     ];
 
     environment.variables = {
