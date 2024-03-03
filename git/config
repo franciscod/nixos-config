@@ -33,6 +33,7 @@
 	cane = commit --amend --no-edit
 	co   = checkout
 	ma   = merge --abort
+	pf   = push --force-with-lease
 	pp   = !git pull && git push
 	pu   = !git pull && git push
 	rc   = rebase --continue
