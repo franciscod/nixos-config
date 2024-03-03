@@ -16,13 +16,15 @@ set mouse=a
 
 set autoindent
 
+set updatetime=100 "fast gitgutter
+
 let mapleader=" "
 map <leader><leader> :Commands<CR>
 map <leader>/ :execute 'Rg ' . input('Rg/')<CR>
 map <leader>b :Buffers<CR>
+map <leader>d :GFiles?<CR>
 map <leader>f :Files<CR>
 map <leader>g :GFiles<CR>
-map <leader>G :GFiles?<CR>
 map <leader>l :BLines<CR>
 map <leader>o :b #<CR>
 map <leader>p "+p
