@@ -281,7 +281,7 @@ in
       '';
     };
 
-    system.activationScripts = {
+    system.userActivationScripts = {
       rfkillUnblockWlan = {
         text = ''
         rfkill block bluetooth
