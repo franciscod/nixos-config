@@ -97,6 +97,7 @@ in
     services.xserver.displayManager.lightdm.enable = true;
 
     services.unclutter.enable = true;
+    services.unclutter.timeout = 5;
 
     virtualisation = {
       podman = {
