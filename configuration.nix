@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   RTMP_PORT = 2463;
+  NOVNC_PORT = 6080;
 in
 {
     imports = [
@@ -200,6 +201,7 @@ in
         nix-direnv
         nix-index
         nodejs
+        novnc
         nq
         obs-studio
         p7zip
@@ -236,6 +238,7 @@ in
         w3m
         wireguard-tools
         wget
+        x11vnc
         xarchiver
         xclip
         xdotool
@@ -299,7 +302,7 @@ in
     # };
 
     # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 8000 RTMP_PORT ];
+    networking.firewall.allowedTCPPorts = [ 8000 RTMP_PORT NOVNC_PORT ];
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
