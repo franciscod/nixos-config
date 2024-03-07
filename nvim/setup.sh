@@ -14,3 +14,4 @@ git clone https://github.com/leafo/moonscript-vim.git
 git clone https://github.com/neovim/nvim-lspconfig
 git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/airblade/vim-gitgutter
+git clone https://github.com/tpope/vim-commentary
