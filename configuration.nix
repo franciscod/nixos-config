@@ -214,6 +214,7 @@ in
         podman-compose
         psmisc
         python3
+        python3Packages.tkinter
         qbittorrent
         qrencode
         ranger
