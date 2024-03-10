@@ -41,6 +41,9 @@ map U <C-R>
 map [c :cprev<CR>
 map ]c :cnext<CR>
 
+map [b :bprev<CR>
+map ]b :bnext<CR>
+
 set list
 set listchars=tab:\|\ ,trail:·,space:·,extends:>,precedes:<,nbsp:+
 match Todo /\s\+$/
