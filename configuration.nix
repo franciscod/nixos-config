@@ -171,6 +171,8 @@ in
         dump1090
         entr
         fd
+        ffmpeg
+        figlet
         file
         firefox
         fish
@@ -200,6 +202,7 @@ in
         ninja
         nix-direnv
         nix-index
+        nmap
         nodejs
         novnc
         nq
