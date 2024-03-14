@@ -192,6 +192,8 @@ in
         jq
         libyaml
         lldb
+        love
+        lua
         man-pages
         meson
         mono
