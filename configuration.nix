@@ -159,6 +159,7 @@ in
         chromium
         clang
         clang-tools # for clangd
+        cloc
         csdr
         cubicsdr
         cmake
@@ -167,8 +168,8 @@ in
         difftastic
         dmenu
         dotnet-sdk
-        # dotnet-sdk-6
         dump1090
+        easyeffects
         entr
         fd
         ffmpeg
@@ -188,6 +189,7 @@ in
         graphviz
         gqrx
         helix
+        helvum
         htop
         jq
         libyaml
@@ -217,6 +219,7 @@ in
         peek
         pkg-config
         podman-compose
+        pulseaudio
         psmisc
         python3
         python3Packages.tkinter
@@ -228,6 +231,7 @@ in
         rtl-sdr
         ruby
         rwc
+        sox
         snooze
         syncthing
         texlive.combined.scheme-tetex
