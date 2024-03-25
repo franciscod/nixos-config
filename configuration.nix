@@ -191,6 +191,7 @@ in
         helix
         helvum
         htop
+        inkscape
         jq
         libyaml
         lldb
@@ -240,6 +241,7 @@ in
         tmux
         tree
         unclutter
+        units
         unzip
         urh
         usbutils
