@@ -234,6 +234,7 @@ in
         rwc
         sox
         snooze
+        sqlite-interactive
         syncthing
         texlive.combined.scheme-tetex
         tig
