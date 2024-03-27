@@ -222,8 +222,9 @@ in
         podman-compose
         pulseaudio
         psmisc
-        python3
-        python3Packages.tkinter
+        (python3.withPackages (pps: with pps; [
+          tkinter
+        ]))
         qbittorrent
         qrencode
         ranger
