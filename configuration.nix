@@ -154,6 +154,7 @@ in
         acpi
         age
         alacritty
+        android-tools # adb
         audacity
         avalonia-ilspy
         chromium
@@ -171,6 +172,7 @@ in
         dump1090
         easyeffects
         entr
+        exiftool
         fd
         ffmpeg
         figlet
@@ -191,6 +193,8 @@ in
         helix
         helvum
         htop
+        imagemagick
+        img2pdf
         inkscape
         jq
         libyaml
@@ -228,7 +232,9 @@ in
         qbittorrent
         qrencode
         ranger
+        rclone
         ripgrep
+        rsync
         rtl_433
         rtl-sdr
         ruby
