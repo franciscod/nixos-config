@@ -166,6 +166,7 @@ in
         fish
         fx
         fzf
+        gdb
         ghc
         gimp
         git
@@ -191,6 +192,7 @@ in
         mono
         moreutils
         mpv
+        nasm
         ncdu
         neovim
         ninja
@@ -238,6 +240,7 @@ in
         unzip
         urh
         usbutils
+        valgrind
         vim-full
         # vncdo
         w3m
