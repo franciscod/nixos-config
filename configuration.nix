@@ -187,6 +187,7 @@ in
         lldb
         love
         lua
+        lua-language-server
         man-pages
         meson
         mono
