@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 let
+  KDE_CONNECT_PORT_RANGE = { from = 1714; to = 1764; };  # TODO: try KDE connect
   RTMP_PORT = 2463;
   NOVNC_PORT = 6080;
 in
@@ -30,26 +31,7 @@ in
 
     powerManagement.enable = true;    # "stock NixOS power management tool"
     services.thermald.enable = true;  # "prevents overheating on intel cpus"
-    services.tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_ENERGY_PREF_POLICY_ON_AC = "performance";
-        CPU_MIN_PERF_ON_AC = 0;
-        CPU_MAX_PERF_ON_AC = 100;
 
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        CPU_ENERGY_PREF_POLICY_ON_BAT = "power";
-        CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 80;
-
-        START_CHARGE_THRESH_BAT0 = 83;
-        STOP_CHARGE_THRESH_BAT0  = 89;
-
-        START_CHARGE_THRESH_BAT1 = 83;
-        STOP_CHARGE_THRESH_BAT1  = 89;
-      };
-    };
     networking.hostName = "tatskrow";
 
     time.timeZone = "America/Buenos_Aires";
@@ -90,12 +72,12 @@ in
 
     services.xserver.libinput.enable = true;
 
-    services.xserver.desktopManager.xfce.enable = true;
+    services.xserver.displayManager.sddm.enable = true;
+    services.xserver.desktopManager.plasma5.enable = true;
+    services.xserver.displayManager.defaultSession = "plasma";
 
     services.xserver.displayManager.autoLogin.enable = true;
     services.xserver.displayManager.autoLogin.user = "fd";
-    services.xserver.displayManager.defaultSession = "xfce";
-    services.xserver.displayManager.lightdm.enable = true;
 
     services.unclutter.enable = true;
     services.unclutter.timeout = 5;
@@ -321,10 +303,20 @@ in
     #   enableSSHSupport = true;
     # };
 
-    # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 8000 RTMP_PORT NOVNC_PORT ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
+    networking.firewall.allowedTCPPorts = [
+        8000
+        RTMP_PORT
+        NOVNC_PORT
+        25565
+    ];
+    networking.firewall.allowedTCPPortRanges = [
+        KDE_CONNECT_PORT_RANGE
+    ];
+    networking.firewall.allowedUDPPortRanges = [
+        KDE_CONNECT_PORT_RANGE
+    ];
+
+    # Disable the firewall altogether.
     # networking.firewall.enable = false;
 
     # (to /run/current-system/configuration.nix)
