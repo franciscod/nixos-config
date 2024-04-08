@@ -94,7 +94,10 @@ in
     services.blueman.enable = true;
 
     hardware.rtl-sdr.enable = true;
-    services.udev.packages = [ pkgs.rtl-sdr ];
+    services.udev.packages = [ 
+      pkgs.android-udev-rules
+      pkgs.rtl-sdr
+    ];
 
     services.tailscale.enable = true;
     services.avahi.enable = true;
