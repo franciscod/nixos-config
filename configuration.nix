@@ -174,6 +174,7 @@ in
         gnumake
         gnumeric
         goaccess
+        gotty
         graphviz
         gqrx
         helix
@@ -312,6 +313,7 @@ in
 
     networking.firewall.allowedTCPPorts = [
         8000
+        8080
         RTMP_PORT
         NOVNC_PORT
         25565
