@@ -7,6 +7,7 @@ set shortmess+=I "skip intro
 set ts=4 sw=4 sts=4 et
 set number
 set relativenumber
+set colorcolumn=80
 
 set ttyfast "placebo?
 
@@ -46,7 +47,7 @@ map ]b :bnext<CR>
 
 set list
 set listchars=tab:\|\ ,trail:·,space:·,extends:>,precedes:<,nbsp:+
-match Todo /\s\+$/
+match Todo /\s\+$/ " highlight trailing spaces
 
 lua <<EOF
 
