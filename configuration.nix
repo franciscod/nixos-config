@@ -152,6 +152,7 @@ in
         croc
         delta
         difftastic
+        dig
         dmenu
         dotnet-sdk
         dump1090
@@ -184,6 +185,7 @@ in
         img2pdf
         inkscape
         jq
+        libreoffice
         libyaml
         lldb
         love
@@ -216,7 +218,10 @@ in
         pulseaudio
         psmisc
         (python3.withPackages (pps: with pps; [
+          jupyter
+          jupytext
           tkinter
+          torch
         ]))
         qbittorrent
         qrencode
@@ -228,11 +233,13 @@ in
         rtl-sdr
         ruby
         rwc
+        socat
         sox
         snooze
         sqlite-interactive
         syncthing
         texlive.combined.scheme-tetex
+        texliveFull
         tig
         tigervnc
         tmux
@@ -246,6 +253,8 @@ in
         vim-full
         # vncdo
         w3m
+        whois
+        websocat
         wireguard-tools
         wget
         x11vnc
