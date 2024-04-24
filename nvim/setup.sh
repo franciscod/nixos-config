@@ -15,3 +15,5 @@ git clone https://github.com/neovim/nvim-lspconfig
 git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/airblade/vim-gitgutter
 git clone https://github.com/tpope/vim-commentary
+git clone https://github.com/nvim-lua/plenary.nvim
+git clone https://github.com/nvim-telescope/telescope.nvim -b 0.1.6

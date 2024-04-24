@@ -21,12 +21,12 @@ set updatetime=100 "fast gitgutter
 
 let mapleader=" "
 map <leader><leader> :Commands<CR>
-map <leader>/ :execute 'Rg ' . input('Rg/')<CR>
-map <leader>b :Buffers<CR>
-map <leader>d :GFiles?<CR>
-map <leader>f :Files<CR>
-map <leader>g :GFiles<CR>
-map <leader>l :BLines<CR>
+"map <leader>/ :execute 'Rg ' . input('Rg/')<CR>
+"map <leader>b :Buffers<CR>
+"map <leader>d :GFiles?<CR>
+"map <leader>f :Files<CR>
+"map <leader>g :GFiles<CR>
+"map <leader>l :BLines<CR>
 map <leader>o :b #<CR>
 map <leader>p "+p
 map <leader>y "+y
@@ -54,6 +54,7 @@ lua <<EOF
 require'lspconfig'.zls.setup{}
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.lua_ls.setup{}
+require'lspconfig'.gopls.setup{}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -79,5 +80,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
   end,
 })
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>g', builtin.git_files, {})
+vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<leader>d', builtin.git_status, {})
+vim.keymap.set('n', '<leader>/', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>?', builtin.grep_string, {})
 
 EOF
