@@ -243,6 +243,7 @@ in
         tig
         tigervnc
         tmux
+        traceroute
         tree
         unclutter
         units
