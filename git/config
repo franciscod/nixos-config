@@ -30,9 +30,10 @@
 	recurse = true
 
 [alias]
-	ca   = commit --amend
-	cane = commit --amend --no-edit
+	ca   = commit --amend --no-edit
+	cae  = commit --amend
 	co   = checkout
+	desc = commit --allow-empty
 	ma   = merge --abort
 	pf   = push --force-with-lease
 	pp   = !git pull && git push
