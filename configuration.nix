@@ -167,6 +167,7 @@ in
         fish
         fx
         fzf
+        gcc
         gdb
         ghc
         gimp
@@ -185,6 +186,7 @@ in
         img2pdf
         inkscape
         jq
+        lf
         libreoffice
         libyaml
         lldb
@@ -227,6 +229,7 @@ in
         qrencode
         ranger
         rclone
+        remmina
         ripgrep
         rsync
         rtl_433
@@ -238,8 +241,7 @@ in
         snooze
         sqlite-interactive
         syncthing
-        texlive.combined.scheme-tetex
-        texliveFull
+        texlive.combined.scheme-full
         tig
         tigervnc
         tmux
@@ -265,6 +267,7 @@ in
         xe
         xfce.xfce4-pulseaudio-plugin
         xonotic
+        xournalpp
         xorg.xkill
         yt-dlp
         zathura
