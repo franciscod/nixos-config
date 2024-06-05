@@ -50,8 +50,8 @@ in
     };
 
     services.xserver.enable = true;
-    services.xserver.layout = "us";
-    services.xserver.xkbVariant = "altgr-intl";
+    services.xserver.xkb.layout = "us";
+    services.xserver.xkb.variant = "altgr-intl";
 
     # alsa
     # sound.enable = true;
@@ -70,14 +70,13 @@ in
       jack.enable = true;
     };
 
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 
-    services.xserver.displayManager.sddm.enable = true;
+    services.displayManager.sddm.enable = true;
+    services.displayManager.defaultSession = "plasma";
+    services.displayManager.autoLogin.enable = true;
+    services.displayManager.autoLogin.user = "fd";
     services.xserver.desktopManager.plasma5.enable = true;
-    services.xserver.displayManager.defaultSession = "plasma";
-
-    services.xserver.displayManager.autoLogin.enable = true;
-    services.xserver.displayManager.autoLogin.user = "fd";
 
     services.unclutter.enable = true;
     services.unclutter.timeout = 5;
@@ -254,7 +253,7 @@ in
         usbutils
         valgrind
         vim-full
-        # vncdo
+        vncdo
         w3m
         whois
         websocat
