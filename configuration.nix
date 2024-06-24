@@ -188,6 +188,7 @@ in
         lf
         libreoffice
         libyaml
+        linux-wifi-hotspot
         lldb
         love
         lua
