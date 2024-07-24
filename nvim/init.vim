@@ -49,6 +49,9 @@ set list
 set listchars=tab:\|\ ,trail:·,space:·,extends:>,precedes:<,nbsp:+
 match Todo /\s\+$/ " highlight trailing spaces
 
+" C#
+set errorformat+=%f(%l\\,%c):\ %m%.%#
+
 lua <<EOF
 
 require'lspconfig'.zls.setup{}
