@@ -40,3 +40,7 @@
 	pu   = !git pull && git push
 	rc   = rebase --continue
 	root = commit --allow-empty -m 'root commit'
+
+	skip         = update-index --skip-worktree
+	noskip       = update-index --no-skip-worktree
+	list-skipped = !git ls-files -v . | grep ^S
