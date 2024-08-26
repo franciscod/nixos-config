@@ -44,3 +44,7 @@
 	skip         = update-index --skip-worktree
 	noskip       = update-index --no-skip-worktree
 	list-skipped = !git ls-files -v . | grep ^S
+
+	# https://gist.github.com/brandondrew/cbaaf35e2cb08185daf7
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+
