@@ -1,0 +1,35 @@
+#!/usr/bin/env lua
+
+local args = {...}
+local delete
+if args[1] == '-d' then
+    delete = true
+    table.remove(args, 1)
+end
+local patt = args[1]
+local padchar = args[2] or ' '
+
+local ls = {}
+local max_index = 0
+
+for l in io.lines() do
+    local i = l:find(patt)
+    ls[#ls+1] = {line=l, index=i}
+    if i and max_index < i then
+        max_index = i
+    end
+end
+
+for _, l in ipairs(ls) do
+    local padding
+    if l.index then
+        padding = 0 + max_index - l.index
+    else
+        padding = 0
+    end
+    if delete then
+        l.line = l.line:sub(l.index)
+        padding = 0
+    end
+    io.write(padchar:rep(padding), l.line, '\n')
+end
