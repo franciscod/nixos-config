@@ -46,12 +46,12 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (let base = pkgs.appimageTools.defaultFhsEnvArgs; in 
+    (let base = pkgs.appimageTools.defaultFhsEnvArgs; in
     pkgs.buildFHSUserEnv (base // {
       name = "fhs";
-      targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config]; 
-      profile = "export FHS=1"; 
-      runScript = "bash"; 
+      targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config];
+      profile = "export FHS=1";
+      runScript = "bash";
       extraOutputsToInstall = ["dev"]; }))
       chromium
       file
@@ -59,12 +59,13 @@
       helix
       htop
       moreutils
-      tmux
       qrencode
+      tmux
       unclutter
       unzip
       vim-full
       wget
+      xarchiver
       zip
   ];
 
@@ -74,11 +75,10 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  services.xserver.libinput.enable = true;
-
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "nixos";
-  services.xserver.displayManager.defaultSession = "xfce";
+  services.displayManager.defaultSession = "xfce";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "nixos";
+  services.libinput.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 }
 
