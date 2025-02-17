@@ -38,6 +38,7 @@ map <leader>I <cmd>edit $MYVIMRC<CR>
 
 command Autosave   autocmd  TextChanged,TextChangedI <buffer> silent write
 command NoAutosave autocmd! TextChanged,TextChangedI
+autocmd BufEnter *.pl :setlocal filetype=prolog
 
 map ge G
 map U <C-R>
@@ -50,7 +51,7 @@ map ]b :bnext<CR>
 
 set list
 set listchars=tab:\|\ ,trail:·,space:·,extends:>,precedes:<,nbsp:+
-match Todo /\s\+$/ " highlight trailing spaces
+" match Todo /\s\+$/ " highlight trailing spaces
 
 " C#
 set errorformat+=%f(%l\\,%c):\ %m%.%#

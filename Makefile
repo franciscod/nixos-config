@@ -1,5 +1,6 @@
 apply: copy rebuild
 upgrade: update apply
+full: upgrade cleanup
 
 copy:
 	sudo cp configuration.nix /etc/nixos/configuration.nix
@@ -13,6 +14,7 @@ grab:
 update:
 	sudo nix-channel --update
 
+clean: cleanup
 gc: cleanup
 cleanup:
 	sudo nix-collect-garbage --delete-older-than 14d

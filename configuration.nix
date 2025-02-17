@@ -3,6 +3,15 @@ let
   KDE_CONNECT_PORT_RANGE = { from = 1714; to = 1764; };  # TODO: try KDE connect
   RTMP_PORT = 2463;
   NOVNC_PORT = 6080;
+
+  # tex = (pkgs.texlive.combine {
+  #   inherit (pkgs.texlive) scheme-full
+  #     dvisvgm dvipng # for preview and export as html
+  #     wrapfig amsmath ulem hyperref capt-of;
+  #     # (setq org-latex-compiler "lualatex")
+  #     #(setq org-preview-latex-default-process 'dvisvgm)
+  # });
+
 in
 {
     imports = [
@@ -17,7 +26,7 @@ in
 
     # services.nixseparatedebuginfod.enable = true;
 
-    nix.settings.experimental-features = [ "nix-command" ];
+    nix.settings.experimental-features = [ "nix-command" "flakes"];
     nix.settings.auto-optimise-store = true;
 
     boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -47,6 +56,7 @@ in
         vaapiVdpau
         libvdpau-va-gl
       ];
+      driSupport32Bit = true;
     };
 
     services.xserver.enable = true;
@@ -69,13 +79,24 @@ in
       pulse.enable = true;
       jack.enable = true;
     };
+    services.pipewire.wireplumber = {
+      enable = true;
+      # extraConfig = {
+      #   "monitor.bluez.properties" = {
+      #       "bluez5.enable-sbc-xq" = true;
+      #       "bluez5.enable-msbc" = true;
+      #       "bluez5.enable-hw-volume" = true;
+      #       "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+      #   };
+      # };
+    };
 
     services.libinput.enable = true;
 
     services.displayManager.sddm.enable = true;
     services.displayManager.defaultSession = "plasma";
-    services.displayManager.autoLogin.enable = true;
-    services.displayManager.autoLogin.user = "fd";
+    # services.displayManager.autoLogin.enable = true;
+    # services.displayManager.autoLogin.user = "fd";
     services.xserver.desktopManager.plasma5.enable = true;
 
     services.unclutter.enable = true;
@@ -98,10 +119,12 @@ in
       pkgs.rtl-sdr
     ];
 
-    services.tailscale.enable = true;
+    # services.tailscale.enable = true;
     services.avahi.enable = true;
 
     services.flatpak.enable = true;
+
+    services.input-remapper.enable = true;
 
     xdg.portal = {
       enable = true;
@@ -126,6 +149,8 @@ in
         ];
     };
 
+    programs.nix-ld.enable = true;
+
     environment.shells = [ pkgs.fish ];
     environment.systemPackages = with pkgs; [
         (let base = pkgs.appimageTools.defaultFhsEnvArgs; in
@@ -141,6 +166,7 @@ in
         android-tools # adb
         audacity
         avalonia-ilspy
+        bun
         chromium
         clang
         clang-tools # for clangd
@@ -149,11 +175,14 @@ in
         cubicsdr
         cmake
         croc
+        ddrescue
         delta
         difftastic
         dig
         dmenu
+        dos2unix
         dotnet-sdk
+        dsdcc
         dump1090
         easyeffects
         entr
@@ -169,6 +198,7 @@ in
         gcc
         gdb
         ghc
+        haskellPackages.HUnit
         gimp
         git
         git-absorb
@@ -215,8 +245,10 @@ in
         pavucontrol
         pdfslicer
         peek
+        picocom
         pkg-config
         podman-compose
+        poop
         pulseaudio
         psmisc
         (python3.withPackages (pps: with pps; [
@@ -225,10 +257,11 @@ in
           tkinter
           torch
         ]))
-        qbittorrent
         qrencode
+        R
         ranger
         rclone
+        remind
         remmina
         ripgrep
         rsync
@@ -236,30 +269,37 @@ in
         rtl-sdr
         ruby
         rwc
+        sdrpp
+        snooze
         socat
         sox
-        snooze
         sqlite-interactive
+        sshfs
+        svox
+        swiProlog
         syncthing
-        texlive.combined.scheme-full
+        # tex  # defined at the top
         tig
         tigervnc
         tmux
         traceroute
         tree
+        typst
         unclutter
         units
         unzip
         urh
         usbutils
         valgrind
+        vgmplay-libvgm
         vim-full
         vncdo
         w3m
-        whois
         websocat
-        wireguard-tools
         wget
+        whois
+        wineWowPackages.full
+        wireguard-tools
         x11vnc
         xarchiver
         xclip
@@ -267,14 +307,16 @@ in
         xe
         xfce.xfce4-pulseaudio-plugin
         xonotic
-        xournalpp
         xorg.xkill
+        xournalpp
         yt-dlp
         zathura
         zig
         zip
         zls
     ];
+
+    nixpkgs.config.allowUnfree = true;  # for vgmplay
 
     environment.variables = {
       EDITOR = "vim";
