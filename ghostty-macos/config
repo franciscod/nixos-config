@@ -1,7 +1,10 @@
-command = /opt/homebrew/bin/fish
 font-family = Iosevka Fixed
 font-style = Regular
 font-size = 14
 font-thicken = true
 macos-option-as-alt = true
 theme =  Tomorrow Night
+
+command = /opt/homebrew/bin/fish
+
+auto-update-channel = tip

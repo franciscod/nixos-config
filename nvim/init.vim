@@ -3,6 +3,7 @@ let g:everforest_better_performance = 1 " !?
 colorscheme everforest
 syntax on
 
+set hlsearch
 set shortmess+=I "skip intro
 set ts=4 sw=4 sts=4 et
 set number
@@ -24,8 +25,8 @@ let mapleader=" "
 map <leader>f :GFiles<CR>
 map <leader>F :Files<CR>
 map <leader>/ :Rg<CR>
+map <leader>b :Buffers<CR>
 "map <leader><leader> :Commands<CR>
-"map <leader>b :Buffers<CR>
 "map <leader>d :GFiles?<CR>
 "map <leader>l :BLines<CR>
 map <leader>o :b #<CR>

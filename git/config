@@ -27,7 +27,7 @@
 [status]
 	submoduleSummary = true
 [submodule]
-	recurse = true
+	# recurse = true
 
 [alias]
 	ca   = commit --amend --no-edit
@@ -47,6 +47,8 @@
 
 	# https://gist.github.com/brandondrew/cbaaf35e2cb08185daf7
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+
+	pr-remotes = config --add remote.origin.fetch "+refs/pull/*/head:refs/remotes/origin/pr/*"
 
 [core]
 	excludesFile = ~/.config/git/ignore
