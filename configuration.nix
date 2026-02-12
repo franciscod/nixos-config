@@ -48,7 +48,7 @@ in
 
     networking.networkmanager.enable = true;
 
-    hardware.opengl = {
+    hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
@@ -56,7 +56,7 @@ in
         vaapiVdpau
         libvdpau-va-gl
       ];
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
 
     services.xserver.enable = true;
@@ -276,7 +276,7 @@ in
         sqlite-interactive
         sshfs
         svox
-        swiProlog
+        swi-prolog
         syncthing
         # tex  # defined at the top
         tig
