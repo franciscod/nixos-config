@@ -29,8 +29,8 @@ in
     nix.settings.experimental-features = [ "nix-command" "flakes"];
     nix.settings.auto-optimise-store = true;
 
-    boot.kernelPackages = pkgs.linuxPackages_zen;
-    # boot.kernelPackages = pkgs.linuxPackages-rt;
+    # boot.kernelPackages = pkgs.linuxPackages_zen;
+    boot.kernelPackages = pkgs.linuxPackages-rt;
 
     boot.kernelParams = [ "modprobe.blacklist=dvb_usb_rtl28xxu" ];
 
@@ -109,6 +109,10 @@ in
         defaultNetwork.settings.dns_enabled = true;
       };
     };
+
+    virtualisation.virtualbox.host.enable = true;
+    virtualisation.virtualbox.host.enableExtensionPack = true;
+    users.extraGroups.vboxusers.members = [ "fd" ];
 
     hardware.bluetooth.enable = true;
     services.blueman.enable = true;
