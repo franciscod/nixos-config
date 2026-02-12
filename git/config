@@ -52,3 +52,5 @@
 
 [core]
 	excludesFile = ~/.config/git/ignore
+[advice]
+	detachedHead = false
